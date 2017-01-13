@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_erase"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.oli.calculator.Erase">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="An erase will remove all data properly(rewrite)"
+            android:layout_width="379dp"
+            android:layout_height="87dp"
+            tools:layout_editor_absoluteX="0dp"
+            android:id="@+id/L1"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="56dp" />
+
+        <CheckBox
+            android:text="I want to erase everything"
+            android:layout_height="52dp"
+            tools:layout_editor_absoluteX="0dp"
+            android:id="@+id/C1"
+            android:layout_width="363dp"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            app:layout_constraintTop_toTopOf="@+id/B1"
+            android:layout_marginTop="150dp" />
+
+        <Button
+            android:text="Erase All"
+            android:layout_width="363dp"
+            android:layout_height="50dp"
+            tools:layout_editor_absoluteX="0dp"
+            android:id="@+id/B2"
+            app:layout_constraintTop_toTopOf="@+id/L1"
+            android:layout_marginTop="264dp"
+            android:textAppearance="@android:style/TextAppearance.Large" />
+
+        <Button
+            android:text="Back"
+            android:layout_width="363dp"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="8dp"
+            android:id="@+id/B1"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textAppearance="@android:style/TextAppearance.Large" />
+
+    </android.support.constraint.ConstraintLayout>
+</RelativeLayout>
