@@ -65,22 +65,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
             case R.id.B16:
                 text+="."; T1.setText(text); break;
-
         }
-
-
-
     }
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
 
         File dir = getFilesDir();
         File f = new File(dir, "Calculator++SettingsHSH.txt");
@@ -95,13 +86,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             Log.d("fg", "false");
         }
 
-
-
         key = new String(new Filer(getApplicationContext()).read("Calculator++SettingsHSH.txt"));
         Key = new String(new Filer(getApplicationContext()).read("Calculator++SettingsDMT.txt"));
-
-
-
 
         T1 = (TextView) findViewById(R.id.T1);
         T1.setText("0");
@@ -137,8 +123,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         B15.setOnClickListener(this);
         B16.setOnClickListener(this);
 
-
-
         B14.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
             {
@@ -153,7 +137,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
                     if (key.equals(text)) {
                         startActivity(new Intent(getApplicationContext(), Menu.class));
-
                     }
                     if (Key.equals(text)) {
                         String[] Files;
@@ -185,23 +168,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                         }
                     }
                 }
-
-
-
                 catch (Exception e) { Log.d("myTag", e.getMessage()); }
             }
         });
-
-
-
-
-
         // Example of a call to a native method
         //TextView tv = (TextView) findViewById(R.id.sample_text);
         //tv.setText(stringFromJNI());
     }
-    private double eval(String equation)
-    {
+    private double eval(String equation) {
         String A =  new String();
         double k;
         String B =  new String();
@@ -209,18 +183,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         int op = 1;
         for(int a = 0; a<equation.length(); a++)
         {
-            if(equation.charAt(a)!='+' && equation.charAt(a)!='-' && equation.charAt(a)!='/' && equation.charAt(a)!='*')//.equals
-
-            {
+            if(equation.charAt(a)!='+' && equation.charAt(a)!='-' && equation.charAt(a)!='/' && equation.charAt(a)!='*') { //equals
                 if(!n){A+=equation.charAt(a);}
                 else{ B+=equation.charAt(a);}
             }
-            else
-            {
-                n = true;
-                switch(equation.charAt(a))
 
-                {
+            else {
+                n = true;
+                switch(equation.charAt(a)) {
                     case '+':
                         op = 1;
                         break;
@@ -233,16 +203,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     case '/':
                         op = 4;
                         break;
-
                 }
-
             }
         }
         double a1 = Double.parseDouble(A);
         double a2 = Double.parseDouble(B);
         double ans = 1.0;
-        switch(op)
-        {
+        switch(op) {
             case 1:
                 ans = a1+a2; break;
             case 2:
@@ -251,18 +218,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 ans = a1 * a2; break;
             case 4:
                 ans = a1 / a2; break;
-
-
         }
         return ans;
-
-
-
     }
-
     /**
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.
      */
-
 }
